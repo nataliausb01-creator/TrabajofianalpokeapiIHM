@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex | IHM </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+    }
+    </script>
+</head>
+<body>
+
+    
+    <header class="barra">
+        <h1 class="logo">Pokedex</h1>
+        <nav class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#aleatorio">Aleatorio</a>
+            <a href="#pokedex">Pokédex</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="inicio">
+            <div class="inicio-texto">
+                <h2>Conoce a los 151 Pokemon de primera generación</h2>
+                <p>
+                    Busca a tu Pokemon favorito, mira sus tipos, estadísticas y características,
+                    o deja que la suerte elija uno por ti en la parte de aleatorio.
+                </p>
+                <a class="boton" href="#pokedex">Explorar la Pokedex</a>
+            </div>
+
+            <div id="marill-contenedor" class="inicio-visor"></div>
+        </section>
+
+        <section id="aleatorio" class="seccion">
+            <h2>Pokemon aleatorio</h2>
+            <p class="subtitulo">Presiona el botón (Saldra un pokemon aleatorio)</p>
+
+            <article class="aleatorio-tarjeta">
+                <img id="aleatorio-img" src="" alt="Imagen del Pokémon aleatorio">
+                <h3 id="aleatorio-nombre">Nombre</h3>
+                <div id="aleatorio-tipos" class="tipos"></div>
+                <button id="boton-generar" class="boton">Generar otro</button>
+            </article>
+        </section>
+
+        <section id="pokedex" class="seccion">
+            <h2>Pokedex</h2>
+            <p class="subtitulo">Escribe un nombre o un número (Click en la tarjeta para ver su detalle)</p>
+
+            <label class="buscador" for="buscador">
+                <span>Buscar Pokemon</span>
+                <input id="buscador" type="search" placeholder="Ejemplo: pikachu o 25" autocomplete="off">
+            </label>
+
+            <p id="mensaje-lista" class="mensaje"></p>
+            <div id="lista-pokemon" class="lista"></div>
+        </section>
+
+    </main>
+
+    <dialog id="detalle" class="detalle">
+        <button id="cerrar-detalle" class="cerrar" aria-label="Cerrar detalle">Cerrar</button>
+        <img id="detalle-img" src="" alt="">
+        <h3 id="detalle-nombre"></h3>
+        <p id="detalle-numero" class="numero"></p>
+        <div id="detalle-tipos" class="tipos"></div>
+
+        <dl class="medidas">
+            <div><dt>Altura</dt><dd id="detalle-altura"></dd></div>
+            <div><dt>Peso</dt><dd id="detalle-peso"></dd></div>
+        </dl>
+
+        <h4>Estadísticas base</h4>
+        <ul id="detalle-stats" class="stats"></ul>
+    </dialog>
+
+    <footer class="pie">
+        <p>Trabajo Final Natalia Diaz · PokeAPI</p>
+    </footer>
+
+    <script type="module" src="js/marill.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
