@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex | IHM </title>
+    <title>Pokedex IHM </title>
+    <link rel="shortcut icon" href="img/poke.webp" type="image/x-icon">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
     
@@ -24,7 +22,9 @@
 
     
     <header class="barra">
-        <h1 class="logo">Pokedex</h1>
+        <a href="#inicio" class="logo">
+            <img src="img/logo.webp" alt="Pokedex 1gen">
+        </a>
         <nav class="menu">
             <a href="#inicio">Inicio</a>
             <a href="#aleatorio">Aleatorio</a>
@@ -47,6 +47,7 @@
             <div id="marill-contenedor" class="inicio-visor"></div>
         </section>
 
+        
         <section id="aleatorio" class="seccion">
             <h2>Pokemon aleatorio</h2>
             <p class="subtitulo">Presiona el botón (Saldra un pokemon aleatorio)</p>
@@ -59,9 +60,10 @@
             </article>
         </section>
 
+       
         <section id="pokedex" class="seccion">
             <h2>Pokedex</h2>
-            <p class="subtitulo">Escribe un nombre o un número (Click en la tarjeta para ver su detalle)</p>
+            <p class="subtitulo">Escribe un nombre o un número y haz clic en un pokemon para ver su detalle.</p>
 
             <label class="buscador" for="buscador">
                 <span>Buscar Pokemon</span>
@@ -69,29 +71,44 @@
             </label>
 
             <p id="mensaje-lista" class="mensaje"></p>
-            <div id="lista-pokemon" class="lista"></div>
+
+            <div class="pokedex-columnas">
+
+                
+                <div id="lista-pokemon" class="lista"></div>
+
+                
+                <aside id="detalle" class="detalle">
+
+                    
+                    <p id="detalle-vacio" class="detalle-vacio">
+                        Haz clic en un Pokemon y la carta te aparecerá.
+                    </p>
+
+                    <div id="detalle-contenido" hidden>
+                        <img id="detalle-img" src="" alt="">
+                        <h3 id="detalle-nombre"></h3>
+                        <p id="detalle-numero" class="numero"></p>
+                        <div id="detalle-tipos" class="tipos"></div>
+
+                        <dl class="medidas">
+                            <div><dt>Altura</dt><dd id="detalle-altura"></dd></div>
+                            <div><dt>Peso</dt><dd id="detalle-peso"></dd></div>
+                        </dl>
+
+                        <h4>Estadísticas base</h4>
+                        <ul id="detalle-stats" class="stats"></ul>
+                    </div>
+
+                </aside>
+
+            </div>
         </section>
 
     </main>
 
-    <dialog id="detalle" class="detalle">
-        <button id="cerrar-detalle" class="cerrar" aria-label="Cerrar detalle">Cerrar</button>
-        <img id="detalle-img" src="" alt="">
-        <h3 id="detalle-nombre"></h3>
-        <p id="detalle-numero" class="numero"></p>
-        <div id="detalle-tipos" class="tipos"></div>
-
-        <dl class="medidas">
-            <div><dt>Altura</dt><dd id="detalle-altura"></dd></div>
-            <div><dt>Peso</dt><dd id="detalle-peso"></dd></div>
-        </dl>
-
-        <h4>Estadísticas base</h4>
-        <ul id="detalle-stats" class="stats"></ul>
-    </dialog>
-
     <footer class="pie">
-        <p>Trabajo Final Natalia Diaz · PokeAPI</p>
+        <p>Trabajo Final Natalia Diaz ; PokeAPI</p>
     </footer>
 
     <script type="module" src="js/marill.js"></script>
